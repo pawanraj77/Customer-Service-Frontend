@@ -1,0 +1,40 @@
+<p>update-solution works!</p>
+<div *ngIf="message" class="alert alert-success">
+  <p>{{ message }}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  <p>{{ errorMessage }}</p>
+</div>
+<div>
+<div class="container">
+<form (submit)="updateEntry()">
+  <div class="form-row">
+ <div class="form-group col-md-6">
+  <label for="issueId">Issue ID:</label>
+  <input class="form-control" type="number" [(ngModel)]="issueId" name="issueId">
+</div>
+  <br>
+  <div class="form-group col-md-6">
+    <label for="description">Solution Description:</label>
+    <input class="form-control" type="text" [(ngModel)]="description" name="description"    #descriptionField="ngModel" required>
+    <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)" class="text-danger">
+      Description is required
+  </div>
+</div>
+
+  <br>
+  <div class="form-group col-md-6">
+    <label for="date">Solution Date:</label>
+    <input class="form-control" type="date" [(ngModel)]="date" name="date"  #dateField="ngModel" required>
+    <div *ngIf="dateField.invalid && (dateField.dirty || dateField.touched)" class="text-danger">
+      Date is required
+  </div>
+  </div>
+ <br>
+    <button class = "btn btn-success" type="submit">Update</button>
+  </div>
+  </form>
+
+</div>
+  </div>
+

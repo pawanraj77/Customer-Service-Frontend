@@ -1,0 +1,54 @@
+<h3>Search Solution</h3>
+<div *ngIf="message && solutions.length>0" class="alert alert-success">
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    <p>{{ errorMessage }}</p>
+  </div>
+ <div class="container">
+<form>
+    <div class="form-row align-items-center">
+    <div class="form-group col-md-6">
+    <label for="date">Date : </label>
+    <input
+     class="form-control"
+      type="date"
+      id="date"
+      name="date"
+      [(ngModel)]="date" 
+      #dateField="ngModel" 
+      required
+    />
+    <div *ngIf="dateField.invalid && (dateField.dirty || dateField.touched)" class="text-danger">
+         Date is required
+    </div>
+</div>
+</div>
+</form>
+<br>
+<button (click)="onDateChange()"  class="btn btn-success">
+    Search
+</button>
+</div>
+<br>
+<div *ngIf="solutions.length>0">
+<table class="table">
+    <thead>
+        <tr>
+            <th>Solution Id</th>
+            <th>Solution Description</th>
+            <th>Solution Date</th> 
+          
+    </thead>
+    <tbody>
+        <tr *ngFor = "let sol of solutions" >
+            <td>{{sol.solutionId}}</td>
+            <td>{{sol.description}}</td>
+            <td>{{sol.date}}</td>
+       
+            
+        </tr>
+        
+    </tbody>
+</table>
+</div>

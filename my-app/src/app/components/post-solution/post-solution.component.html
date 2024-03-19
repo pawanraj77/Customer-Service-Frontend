@@ -1,0 +1,60 @@
+<p>post-solution works!</p>
+<div *ngIf="message" class="alert alert-success">
+  <p>{{ message }}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+  <p>{{ errorMessage }}</p>
+</div>
+
+<div class="container">
+    <form (ngSubmit)="submitForm()">
+      <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="issueId">Issue Id: </label>
+        <input
+         class="form-control"
+          type="number"
+          id="issueId"
+          name="issueId"
+          [(ngModel)]="issueId"
+          required
+        />
+      </div >
+        <br>
+       <div class="form-group col-md-6">
+        <label for="description">Solution Description: </label>
+        <input
+        class="form-control"
+          type="text"
+          id="description"
+          name="description"
+          [(ngModel)]="description"
+          #descriptionField="ngModel"
+          required   
+        />
+        <div *ngIf="descriptionField.invalid && (descriptionField.dirty || descriptionField.touched)" class="text-danger">
+          Description is required
+      </div>
+    </div>
+        <br>
+        <div class="form-group col-md-6">
+      
+        <label for="date">Solution Date: </label>
+        <input
+        class="form-control"
+          type="date"
+          id="date"
+          name="date"
+          [(ngModel)]="date"
+          required
+          #dateField="ngModel"
+        />
+        <div *ngIf="dateField.invalid && (dateField.dirty || dateField.touched)" class="text-danger">
+          Date is required
+      </div>
+      </div>
+        <br>
+       <button class="btn btn-success">Submit</button>
+      </div>
+    </form>
+</div>
