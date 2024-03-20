@@ -1,0 +1,40 @@
+<div>
+    <h3>Display All Employees: </h3>
+    <div *ngIf="message" class="alert alert-success">
+        <p> {{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p> {{errorMessage}}</p>
+    </div>
+
+
+    <h3 *ngIf="employees.length <1"> No employees Found.</h3>
+    <table *ngIf="employees.length>0" class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone No.</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>City</th>
+                <th>Action</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees">
+                <td>{{employee.cdsId}}</td>
+                <td>{{employee.firstName}}</td>
+                <td>{{employee.lastName}}</td>
+                <td>{{employee.phoneNo}}</td>
+                <td>{{employee.email}}</td>
+                <td>{{employee.password}}</td>
+                <td>{{employee.city}}</td>
+                <td><button (click)="deleteEmployeeById(employee.cdsId)" class="btn btn-danger">Delete</button></td>
+                <td><button (click)="updateEmployee(employee)" class="btn btn-warning">Update</button></td> 
+            </tr>
+        </tbody>
+    </table>
+</div>

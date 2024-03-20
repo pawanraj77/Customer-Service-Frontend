@@ -1,4 +1,30 @@
+<div *ngIf = "isUserLoggedIn">
+  <nav>
+    <ul>
+      <li>
+        <img *ngIf="imageUrl" [src]="imageUrl" alt="image name" height="70px" width="90px">
+      </li>
+      <li>
+        <a routerLink='home' routerLinkActive = "active">Home</a>
+      </li>
+      <li>
+        <a routerLink='add-employee' routerLinkActive = "active">Register</a>
+      </li>
+      <li>
+        <a routerLink='login' routerLinkActive = "active">Login</a>
+      </li>
+      <li>
+        <a routerLink='employee' routerLinkActive = "active">Display Employees</a>
+      </li>
+      <li>
+        <a routerLink='update-employee' routerLinkActive = "active">Update</a>
+      </li>
+      <li>
+        <a routerLink='change-password' routerLinkActive = "active">Change Password</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 <div>
-  <h1>Hii Guys</h1>
-  <p>I'm pawan here</p>
+  <router-outlet></router-outlet>
 </div>
