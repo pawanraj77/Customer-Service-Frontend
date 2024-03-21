@@ -1,0 +1,26 @@
+<p>view-issues works!</p>
+<div>
+    <h3>View Issues</h3>
+    <div *ngIf="message" class="alert alert-success">
+        <p> {{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p> {{errorMessage}}</p>
+    </div>
+
+    <h3 *ngIf="issues.length<1">No Issue Found</h3>
+    <table *ngIf="issues.length>0" class="table">
+        <thead>
+            <tr>
+                <th>Issue Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let issue of issues">
+                <td>{{issue.description}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

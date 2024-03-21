@@ -8,6 +8,7 @@ import { Login } from '../model/login';
   providedIn: 'root'
 })
 export class EmployeeService {
+  console: any;
 
   constructor(private httpClient:HttpClient) { }
   addEmployee(newEmployee:Employee):Observable<any>{
@@ -31,5 +32,13 @@ export class EmployeeService {
 
   changePassword(login:Login): Observable<any> {
     return this.httpClient.put('http://localhost:8090/changePassword', login);
+  }
+
+  raiseIssueByEmployee(cdsId?:string|null, description?:string): Observable<any> {
+    return this.httpClient.post('http://localhost:8090/raiseIssue/'+cdsId+'/'+description,{});
+  }
+
+  viewIssuesByEmployee(cdsId?:string|null) : Observable<any> {
+    return this.httpClient.get('http://localhost:8090/viewIssues/' + cdsId);
   }
 }

@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './update-employee.component.html',
   styleUrl: './update-employee.component.css'
 })
-export class UpdateEmployeeComponent implements OnInit{
+export class UpdateEmployeeComponent {
 
   id: string | null = "";
   employee:Employee = new Employee();
@@ -44,7 +44,7 @@ export class UpdateEmployeeComponent implements OnInit{
     this.employeeService.updateEmployee(this.employee).subscribe(
       {
         next: (data) => {
-          // console.log(data);
+          console.log(data);
           this.message = "Employee Account Updated";
         },
         error: (err) => {

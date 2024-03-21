@@ -1,3 +1,5 @@
+import { Issue } from "./issue";
+
 export class Employee {
     constructor(
         public cdsId?: number,
@@ -7,6 +9,7 @@ export class Employee {
         public email?: string,
         public password?: string,
         public confirmPassword?: string,
-        public city?: string
+        public city?: string,
+        public issues?:  Issue[]
     ) {}
 }
