@@ -1,0 +1,33 @@
+.carousel-inner {
+    height: 200px; 
+    width: 80%; 
+  }
+  .card-container {
+    display: flex;
+  }
+  .card {
+    margin: 80px;
+
+  }
+.card-img-top{
+  height: 350px;
+}
+  .slogan {
+    font-size: 24px; 
+    font-weight: bold; 
+    color: #271b1b; 
+  }
+  /* .card-container {
+    background-color: rgb(189, 179, 179); 
+  }
+   */
+   .background-img {
+    background-image: url('/assets/images/backgroud.jpg');
+   }
+
+   .custom-navbar {
+    background-color: #ab8d6a; /* Beige */
+    color: #f8f3f3; /* Dark gray for text */
+  }
+  
+  

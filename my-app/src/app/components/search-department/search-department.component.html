@@ -17,13 +17,13 @@
             <table *ngIf="department.length > 0" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <!-- <th>ID</th> -->
                         <th>Name</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let d of department | searchDepartment : query">
-                        <td>{{ d.deptId }}</td>
+                        <!-- <td>{{ d.deptId }}</td> -->
                         <td>{{ d.deptName }}</td>
                     </tr>
                 </tbody>

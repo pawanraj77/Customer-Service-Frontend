@@ -16,7 +16,7 @@
         <div class="mb-3">
             <label for="deptName" class="form-label">Department Name</label>
             <div class="col-6"> 
-                <input type="text" class="form-control" id="deptName" name="deptName" [(ngModel)]="newDepartment.deptName" #nameRef="ngModel" pattern="[A-Za-z ]{2,}" required>
+                <input type="text" class="form-control" id="deptName" name="deptName" [(ngModel)]="newDepartment.deptName" #nameRef="ngModel" pattern="[A-Za-z0-9\s!@#\$%^&*()]{2,}" required>
             </div>         
             <div *ngIf="nameRef.invalid && (nameRef.touched || nameRef.dirty)">
                 <p *ngIf="nameRef.errors?.['required']" class="text-danger">Name is required, can't be blank.</p>
