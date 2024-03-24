@@ -1,5 +1,5 @@
-<div>
-    <h3>Raise Issue</h3>
+<div class="issue-form-container">
+    <h3>Raise an Issue</h3>
     <div *ngIf="message" class="alert alert-success">
         <p>{{message}}</p>
     </div>
@@ -9,16 +9,17 @@
     
     <form id="form2" #userForm="ngForm">
         <div class="form-group">
-            <label for="">Give the Issue description:</label><br>
+            <label for="description">Issue Description:</label><br>
             <input type="text" id="description" name="description" [(ngModel)]="issue.description"
-            #descriptionRef="ngModel" required><br><br>
+            #descriptionRef="ngModel" required><br>
             
             <div *ngIf="descriptionRef.invalid && (descriptionRef.touched || descriptionRef.dirty)">
-                <p *ngIf="descriptionRef.errors?.['required']" class="text-danger"> issue description Can't be blank!!!</p>
+                <p *ngIf="descriptionRef.errors?.['required']" class="text-danger">Issue description is required.</p>
             </div>
         </div>
 
-        <button (click)="raiseIssue(issue.description)" class="btn btn-primary">Submit</button>
+        <button type="submit" (click)="raiseIssue(issue.description)" class="btn btn-primary">Submit Issue</button>
         
     </form>
 </div>
+

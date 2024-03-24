@@ -60,10 +60,10 @@ export class EmployeeComponent {
       )    
   }
 
-  updateEmployee(employee:Employee) {
-    console.log(employee);
-    this.router.navigateByUrl('update-employee/' + employee.cdsId);
-    // inject(Router).navigateByUrl('update-employee/' + employee.cdsId);
-  }
+  // updateEmployee(employee:Employee) {
+  //   console.log(employee);
+  //   this.router.navigateByUrl('update-employee/' + employee.cdsId);
+  //   // inject(Router).navigateByUrl('update-employee/' + employee.cdsId);
+  // }
 
 }

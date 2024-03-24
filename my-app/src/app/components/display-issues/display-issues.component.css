@@ -1,0 +1,55 @@
+/* CSS for Styling the Display All Issues Component */
+
+/* Style for the main container */
+div {
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* Style for the heading */
+  h3 {
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the success message */
+  .alert.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the error message */
+  .alert.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  /* Style for the table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  /* Style for table headings */
+  th {
+    background-color: rgb(67, 122, 94);
+    color: white;
+    padding: 10px;
+  }
+  
+  /* Style for table rows */
+  td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  /* Alternate row color for better readability */
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  

@@ -12,16 +12,16 @@ export class EmployeeService {
 
   constructor(private httpClient:HttpClient) { }
   addEmployee(newEmployee:Employee):Observable<any>{
-    return this.httpClient.post('http://localhost:8090/register', newEmployee);
+    return this.httpClient.post('http://localhost:8090/employee', newEmployee);
   }
   getAllEmployees():Observable<any> {
     return this.httpClient.get('http://localhost:8090/employees');
   }
   loginEmployee(login:Login):Observable<any> {
-    return this.httpClient.post('http://localhost:8090/login', login);
+    return this.httpClient.post('http://localhost:8090/employee/login', login);
   }
-  deleteEmployeeById(id?:number):Observable<any> {
-    return this.httpClient.delete('http://localhost:8090/employee/'+ id);
+  deleteEmployeeById(cdsId?:number):Observable<any> {
+    return this.httpClient.delete('http://localhost:8090/employee/'+ cdsId);
   }
   updateEmployee(employee:Employee): Observable<any> {
     return this.httpClient.put('http://localhost:8090/employee', employee)
@@ -31,14 +31,14 @@ export class EmployeeService {
   }
 
   changePassword(login:Login): Observable<any> {
-    return this.httpClient.put('http://localhost:8090/changePassword', login);
+    return this.httpClient.put('http://localhost:8090/employee/changePassword', login);
   }
 
   raiseIssueByEmployee(cdsId?:string|null, description?:string): Observable<any> {
-    return this.httpClient.post('http://localhost:8090/raiseIssue/'+cdsId+'/'+description,{});
+    return this.httpClient.post('http://localhost:8090/employee/issue/'+cdsId+'/'+description,{});
   }
 
   viewIssuesByEmployee(cdsId?:string|null) : Observable<any> {
-    return this.httpClient.get('http://localhost:8090/viewIssues/' + cdsId);
+    return this.httpClient.get('http://localhost:8090/employee/issues/' + cdsId);
   }
 }

@@ -12,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './update-employee.component.html',
   styleUrl: './update-employee.component.css'
 })
-export class UpdateEmployeeComponent {
+export class UpdateEmployeeComponent implements OnInit {
 
   id: string | null = "";
   employee:Employee = new Employee();
@@ -20,16 +20,16 @@ export class UpdateEmployeeComponent {
   errorMessage:string = "";
 
   constructor(private activatedRoute:ActivatedRoute, private employeeService:EmployeeService) {
-    this.id = this.activatedRoute.snapshot.paramMap.get('cdsId');
+    this.id = this.activatedRoute.snapshot.paramMap.get(JSON.parse(localStorage.getItem('user') || '').cdsId);
     console.log(this.id);
   }
 
   ngOnInit(): void {
-    this.employeeService.getEmployeeById(this.id).subscribe(
+    this.employeeService.getEmployeeById(JSON.parse(localStorage.getItem('user') || '').cdsId).subscribe(
       {
         next:(data) => {
           console.log(data);
-          this.employee = data;
+          this.employee = data; 
         },
         error: (err) => {
           console.log(err);
