@@ -1,0 +1,18 @@
+#dept{
+    font-family: 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#dept td, #dept th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#dept tr:nth-child(even){background-color:#f2f2f2;}
+#dept tr:hover {background-color:#ddd;}
+#dept th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: skyblue;
+    color: white;
+}
