@@ -1,0 +1,21 @@
+<p>solution works!</p>
+<table  class="table" *ngIf = "solutions.length > 0" width="100%">
+    <thead>
+        <tr>
+            <th>Solution Id</th>
+            <th>Solution Description</th>
+            <th>Solution Date</th> 
+    
+          
+    </thead>
+    <tbody>
+        <tr *ngFor = "let sol of solutions" >
+            <td>{{sol.solutionId}}</td>
+            <td>{{sol.description}}</td>
+            <td>{{sol.date}}</td>
+           
+            
+        </tr>
+        
+    </tbody>
+</table>

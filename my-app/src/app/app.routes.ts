@@ -10,14 +10,13 @@ import { RaiseIssueComponent } from './components/raise-issue/raise-issue.compon
 import { ViewIssuesComponent } from './components/view-issues/view-issues.component';
 
 export const routes: Routes = [
-    {path:'home', component:HomeComponent},
-    {path:'employee', component:EmployeeComponent},
-    {path:'add-employee', component:AddEmployeeComponent},
-    {path:'update-employee/:cdsId', component:UpdateEmployeeComponent},
-    {path:'change-password', component:ChangePasswordComponent},
-    {path:'display-issues', component:DisplayIssuesComponent},
-    {path:'raise-issue', component:RaiseIssueComponent},
-    {path:'view-issues', component:ViewIssuesComponent},
-    {path:'login', component:LoginComponent},
-    {path:'', redirectTo: 'home', pathMatch: 'full'}
+
+  
+    {path:'display-solution',component:DisplaySolutionComponent},
+    {path:'solution',component:SolutionComponent},
+    {path:'post-solution/:issueId',component:PostSolutionComponent},
+    {path:'update-solution',component:UpdateSolutionComponent},
+    {path:'search',component:SearchComponent},
+   
+   
 ];
