@@ -6,6 +6,7 @@ import { UpdateSolutionComponent } from './components/update-solution/update-sol
 import { DisplaySolutionComponent } from './components/display-solution/display-solution.component';
 
 export const routes: Routes = [
+
   
     {path:'display-solution',component:DisplaySolutionComponent},
     {path:'post-solution/:issueId',component:PostSolutionComponent},
@@ -13,6 +14,4 @@ export const routes: Routes = [
     {path:'search',component:SearchComponent},
     {path:'solution',component:SolutionComponent},
    
-   
-
 ];
