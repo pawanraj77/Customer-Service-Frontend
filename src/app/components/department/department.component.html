@@ -1,0 +1,27 @@
+<h3>Department Works</h3>
+<div>
+    <p *ngIf="message">{{message}}</p>
+</div>
+<div>
+    <p *ngIf="errorMessage">{{errorMessage}}</p>
+</div>
+<p *ngIf="departments.length<1">No data is there to fetch</p>
+<div *ngIf="departments.length>0">
+    <table id="dept">
+        <thead>
+            <th>DeptId</th>
+            <th>DeptName</th>
+            <th>ADAction</th>
+            <th>DOAction</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dept of departments">
+                <td>{{dept.deptId}}</td>
+                <td>{{dept.deptName}}</td>
+                <td><button  (click)="assignToDepartment(dept.deptId)" class="btn btn-primary">Assign To Department</button></td>
+                <td><button (click)="displayOperaotrs(dept.deptId)" class="btn btn-primary">DisplayOperaotrs</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+ 
