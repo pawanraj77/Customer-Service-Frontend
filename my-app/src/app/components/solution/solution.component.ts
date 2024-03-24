@@ -26,7 +26,7 @@ export class SolutionComponent {
       
       },
       error:(err)=>{console.log(err);},
-      complete:()=>{console.log("Server completed sending data")
+      complete:()=>{console.log("Server completed sending the data")
     }
      }
    )

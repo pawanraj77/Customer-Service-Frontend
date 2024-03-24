@@ -27,7 +27,7 @@ export class DisplaySolutionComponent {
        
        },
        error:(err)=>{console.log(err);},
-       complete:()=>{console.log("Server completed sending data")
+       complete:()=>{console.log("Server completed sending the data")
      }
       }
     )

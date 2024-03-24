@@ -31,7 +31,7 @@ export class PostSolutionComponent {
     this.solutionService.addEntry(this.issueId || 0, this.description || "", this.date || new Date()).subscribe({
       next: (data) => {
         console.log(data);
-        this.message="Solution Added.";
+        this.message="Solution Added Successfully.";
         this.errorMessage="";
       },
       error: (err) => {

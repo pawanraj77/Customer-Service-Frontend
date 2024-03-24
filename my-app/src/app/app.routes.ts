@@ -9,9 +9,10 @@ export const routes: Routes = [
 
   
     {path:'display-solution',component:DisplaySolutionComponent},
+    {path:'solution',component:SolutionComponent},
     {path:'post-solution/:issueId',component:PostSolutionComponent},
     {path:'update-solution',component:UpdateSolutionComponent},
     {path:'search',component:SearchComponent},
-    {path:'solution',component:SolutionComponent},
+   
    
 ];

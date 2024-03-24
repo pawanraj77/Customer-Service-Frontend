@@ -1,4 +1,4 @@
-<h3>Display Solution</h3>
+<h4>Display Solution</h4>
 <table  class="table my-4" *ngIf = "issues.length > 0" width="100%">
     <thead>
         <tr>
@@ -25,7 +25,7 @@
             <td>{{ issue.solution?.description }}</td>
             <td>{{ issue.solution?.date }}</td>
             <div *ngIf = "issue.solution === null">
-                <td><button class="btn btn-info"(click)="redirectToPostSolution(issue?.issueId)">Post</button></td>
+                <td><button class="btn btn-primary"(click)="redirectToPostSolution(issue?.issueId)">Post</button></td>
             </div>
             <div *ngIf = "issue.solution !== null">
                 <td><button class="btn btn-warning"(click)="redirectToUpdateSolution(issue?.issueId, issue.solution?.description)" >Update</button></td>

@@ -39,7 +39,7 @@ export class UpdateSolutionComponent {
         {
           next: (data) => {
             console.log(data);
-            this.message="Solution Updated.";
+            this.message="Solution Updated Successfully.";
             this.errorMessage="";
           },
           error: (err) => {

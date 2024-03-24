@@ -8,7 +8,7 @@ import { Solution } from '../model/solution';
 })
 export class SolutionService {
 
-  private apiUrl = 'http://localhost:8090'
+  private apiUrl = 'http://localhost:8090';
   constructor(private httpClient:HttpClient) { }
   getAllSolutions() :Observable<any>{
     return this.httpClient.get('http://localhost:8090/solutions');
@@ -59,10 +59,6 @@ export class SolutionService {
   
     return this.httpClient.put(url, body);
   }
-  
-  
-  
-  
   
  
 }

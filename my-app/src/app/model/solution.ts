@@ -8,6 +8,5 @@ export class Solution {
         public description?:string,
         public date?:Date, 
         public issue?:Issue,
-        
     ){}
 }

@@ -29,7 +29,7 @@ export class SearchComponent {
       next:(data)=>{
         console.log(data);
         this.solutions = data;
-        this.message="Search successful";
+        this.message="Search is successful";
         this.errorMessage="";
     
       },
