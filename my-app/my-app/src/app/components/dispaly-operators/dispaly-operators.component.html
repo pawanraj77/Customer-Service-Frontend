@@ -1,0 +1,42 @@
+<p>dispaly-operators works!</p>
+<h3>Display Operators</h3>
+<!-- <link rel="stylesheet" href="dispaly-operators.component.css"> -->
+<div *ngIf="message" class="alert alert-success">
+    <p>{{message}}</p>
+</div>
+<div *ngIf="errorMessage" class="alert alert-danger">
+    <p>{{errorMessage}}</p>
+</div>
+<h3 *ngIf="operators.length<1">No operators to display</h3>
+<table *ngIf="operators.length>0" id="operators">
+    <thead>
+        <tr>
+            <th>OperatorId</th>
+            <th>FirstName</th>
+            <th>LastName</th>
+            <th>EmailId</th>
+            <th>Password</th>
+            <th>PhoneNo</th>
+            <th>City</th>
+            <th>IssuesSolved</th>
+            <th>UAction</th>
+            <th>DAction</th>
+            <th>AIAction</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let operator of operators">
+            <td>{{operator.operatorId}}</td>
+            <td>{{operator.firstName}}</td>
+            <td>{{operator.lastName}}</td>
+            <td>{{operator.email}}</td>
+            <td>{{operator.password}}</td>
+            <td>{{operator.phoneNo}}</td>
+            <td>{{operator.city}}</td>
+            <td>{{operator.issuesSolved}}</td>
+            <td><button (click)="updateOperator(operator)" class="btn btn-warning">Update</button></td>
+            <td><button (click)="deleteOperator(operator.operatorId)" class="btn btn-danger">Delete</button></td>
+            <td><button (click)="addIssueToOperator(operator)" class="btn btn-primary">AssignIssue</button></td>
+        </tr>
+    </tbody>
+</table>

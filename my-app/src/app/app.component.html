@@ -1,17 +1,16 @@
-<div>
-  <nav>
-      <ul>
-          <li><a routerLink="home" routerLinkActive="active">Home</a></li>
-          <li><a routerLink="login" routerLinkActive="active">Login</a> </li>
-          <li><a routerLink="register" routerLinkActive="active">Register</a></li>
-          <li><a routerLink="display" routerLinkActive="active">DispalyOperators</a></li>
-          <li><a routerLink="updateOperator/" routerLinkActive="active">UpdateDetails</a></li>
-          <li><a routerLink="getIssues" routerLinkActive="active">DisplayIssues</a></li>
-          <li><a routerLink="issueBucket" routerLinkActive="active">IssueBucket</a></li>
-          <li><a routerLink="departments" routerLinkActive="active">Departments</a></li>
-      </ul>
-  </nav>
-</div>
+<div class="dropdown">
+        <button class="dropbtn">Departments</button>
+        <div class="dropdown-content">
+          <a routerLink="home" routerLinkActive="active">Home</a>
+          <a routerLink="login" routerLinkActive="active">Login</a> 
+          <a routerLink="register" routerLinkActive="active">Register</a>
+          <a routerLink="display" routerLinkActive="active">DispalyOperators</a>
+          <a routerLink="updateOperator/" routerLinkActive="active">UpdateDetails</a>
+          <a routerLink="getIssues" routerLinkActive="active">DisplayIssues</a>
+          <a routerLink="issueBucket" routerLinkActive="active">IssueBucket</a>
+          <a routerLink="departments" routerLinkActive="active">Departments</a>
+        </div>
+  </div>
 <div>
   <router-outlet></router-outlet>
 </div>
