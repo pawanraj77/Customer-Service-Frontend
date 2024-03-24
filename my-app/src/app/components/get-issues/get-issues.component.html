@@ -13,14 +13,15 @@
         <th>Issue</th>
         <th>IssueDescription</th>
         <th>Action</th>
+        <th>AsiAction</th>
     </thead>
         <tbody>
             <tr *ngFor="let issue of issues">
                 <td>{{issue.id}}</td>
                 <td>{{issue.issue}}</td>
                 <td>{{issue.issueDescription}}</td>
-                <td><button (click)="assignIssue(issue.id)" class="btn btn-primary" >Assign</button></td>
-
+                <td><button (click)="assignIssue(issue.id)" class="btn btn-primary" >Assign</button></td>   
+                <td><button (click)="assignedIssue()" class="btn btn-warning">Assigned</button></td>
             </tr>
         </tbody>
 </table>

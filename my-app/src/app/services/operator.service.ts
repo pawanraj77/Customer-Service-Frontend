@@ -30,4 +30,26 @@ export class OperatorService {
   assignIssueToOperator(id1?:string|null,id2?:number):Observable<any>{
     return this.httpClient.put('http://localhost:8080/assign/issue/'+id1+'/'+id2,{});
   }
+  loginOperator(loginOperator:Operator):Observable<any>{
+    return this.httpClient.post('http://localhost:8080/login',loginOperator);
+  }
+  getIssuesAssignToOperator(id?:number):Observable<any>{
+    return this.httpClient.get('http://localhost:8080/allAssignedIssues/'+id);
+  }
+  solvedIssue(id1?:number,id2?:number):Observable<any>{
+    return this.httpClient.put('http://localhost:8080/issueSolved/inCart/'+id1+'/'+id2,{});
+  }
+  getRemainingIssues(id?:number):Observable<any>{
+    return this.httpClient.get('http://localhost:8080/remainingIssue/'+id);
+  }
+  getDepartments():Observable<any>{
+    return this.httpClient.get('http://localhost:8080/departments/all');
+  }
+  assignOperatorToDepatment(id1?:number,id2?:number):Observable<any>{
+    return this.httpClient.put('http://localhost:8080/addOperatorToDept/'+id1+'/'+id2,{});
+  }
+  getOperatorByDepartment(id?:string|null):Observable<any>
+  {
+    return this.httpClient.get('http://localhost:8080/getOperatorsByDeptId/'+id);
+  }
 }

@@ -15,6 +15,7 @@ export class DispalyOperatorsComponent {
   operators:Operator[]=[];
   message?:string="";
   errorMessage?:string="";
+  issuesRemaining?:number=0;
   constructor(private operatorService:OperatorService,private router:Router)
   {
     this.operatorService.dispalyOperators().subscribe({
@@ -54,4 +55,24 @@ export class DispalyOperatorsComponent {
     this.router.navigateByUrl('getIssues');
     console.log(localStorage);
   }
+  remainingIssuesToSolve(id?:number)
+  {
+    this.operatorService.getRemainingIssues(id).subscribe({
+      next:(data)=>{
+        this.issuesRemaining=data;
+        alert("The remaining issues for operator"+id+' '+data);
+        this.message="Sucess in fetching data";
+      },error:(err)=>{
+        this.errorMessage=err.error;
+        this.message="";
+      }
+    })
+  }
+  assignOperatorToDepartment(operator:Operator)
+  {
+    localStorage.setItem("op",JSON.stringify(operator));
+    this.router.navigateByUrl('departments');
+    console.log(localStorage);
+  }
+  
 }

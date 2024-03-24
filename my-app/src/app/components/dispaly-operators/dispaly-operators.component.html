@@ -7,6 +7,11 @@
 <div *ngIf="errorMessage" class="alert alert-danger">
     <p>{{errorMessage}}</p>
 </div>
+<div *ngIf="issuesRemaining">
+    <p *ngIf="issuesRemaining<3" class="alert alert-success">{{issuesRemaining}}</p>
+    <p *ngIf="issuesRemaining>3" class="alert alert-warning">{{issuesRemaining}}</p>
+    <p *ngIf="issuesRemaining>5" class="alert alert-danger">{{issuesRemaining}}</p>
+</div>
 <h3 *ngIf="operators.length<1">No operators to display</h3>
 <table *ngIf="operators.length>0" id="operators">
     <thead>
@@ -22,6 +27,8 @@
             <th>UAction</th>
             <th>DAction</th>
             <th>AIAction</th>
+            <th>IRAction</th>
+            <th>ADAction</th>
         </tr>
     </thead>
     <tbody>
@@ -37,6 +44,8 @@
             <td><button (click)="updateOperator(operator)" class="btn btn-warning">Update</button></td>
             <td><button (click)="deleteOperator(operator.operatorId)" class="btn btn-danger">Delete</button></td>
             <td><button (click)="addIssueToOperator(operator)" class="btn btn-primary">AssignIssue</button></td>
+            <td><button (click)="remainingIssuesToSolve(operator.operatorId)" class="btn btn-primary">Remaining Issues</button></td>
+            <td><button (click)="assignOperatorToDepartment(operator)" class="btn btn-primary">Assign Department</button></td>
         </tr>
     </tbody>
 </table>

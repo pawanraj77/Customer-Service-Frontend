@@ -41,4 +41,9 @@ export class GetIssuesComponent {
       }
     })
   }
+  assignedIssue()
+  {
+    alert("Are you sure you want to assig issue");
+    localStorage.clear();
+  }
 }
