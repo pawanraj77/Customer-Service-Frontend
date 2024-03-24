@@ -8,6 +8,11 @@ import { ChangePasswordComponent } from './components/change-password/change-pas
 import { DisplayIssuesComponent } from './components/display-issues/display-issues.component';
 import { RaiseIssueComponent } from './components/raise-issue/raise-issue.component';
 import { ViewIssuesComponent } from './components/view-issues/view-issues.component';
+import { SolutionComponent } from './components/solution/solution.component';
+import { DisplaySolutionComponent } from './components/display-solution/display-solution.component';
+import { PostSolutionComponent } from './components/post-solution/post-solution.component';
+import { UpdateSolutionComponent } from './components/update-solution/update-solution.component';
+import { SearchComponent } from './components/search/search.component';
 
 export const routes: Routes = [
 
