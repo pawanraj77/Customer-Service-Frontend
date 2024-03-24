@@ -1,0 +1,79 @@
+<div>
+    <h3>Employee Registration!!!</h3>
+    <div *ngIf="message" class="alert alert-success">
+        <p>{{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <strong>Danger!</strong> {{errorMessage}}
+    </div>
+    <form id="form1" #userForm="ngForm">
+        <label for="firstName">First Name</label><br>
+        <input type="text" id="firstName" name="firstName" [(ngModel)]="newEmployee.firstName" 
+            #firstNameRef="ngModel" pattern="[A-Za-z ]{3,}" required><br>
+
+        <div *ngIf="firstNameRef.invalid && (firstNameRef.touched || firstNameRef.dirty)">
+            <p *ngIf="firstNameRef.errors?.['required']" class="text-danger">Name is required, Can't be blank!!!</p>
+            <p *ngIf="firstNameRef.errors?.['pattern']" class="text-danger">Only chars are allowed, Min 3 chars required.</p>
+        </div>
+
+        <label for="lastName">Last Name</label><br>
+        <input type="text" id="lastName" name="lastName" [(ngModel)]="newEmployee.lastName" 
+            #lastNameRef="ngModel" pattern="[A-Za-z ]{3,}" required><br>
+
+        <div *ngIf="lastNameRef.invalid && (lastNameRef.touched || lastNameRef.dirty)">
+            <p *ngIf="lastNameRef.errors?.['required']" class="text-danger">Name is required, Can't be blank!!!</p>
+            <p *ngIf="lastNameRef.errors?.['pattern']" class="text-danger">Only chars are allowed, Min 3 chars required.</p>
+        </div>
+        
+        <label for="phoneNo">Phone No.</label><br>
+        <input type="number" id="phoneNo" name="phoneNo" [(ngModel)]="newEmployee.phoneNo" 
+            #phoneNoRef="ngModel" min=0 required><br>
+
+        <div *ngIf="phoneNoRef.invalid && (phoneNoRef.touched || phoneNoRef.dirty)">
+            <p *ngIf="phoneNoRef.errors?.['required']" class="text-danger">Phone No is required, cant be blank!!!</p>
+            <p *ngIf="phoneNoRef.errors?.['min']" class="text-danger">-ve value not allowed .</p>     
+        </div>
+
+        <label for="city">City</label><br>
+        <input type="text" id="city" name="city" [(ngModel)]="newEmployee.city" 
+            #cityRef="ngModel" min=0 required><br>
+
+        <div *ngIf="cityRef.invalid && (cityRef.touched || cityRef.dirty)">
+            <p *ngIf="cityRef.errors?.['required']" class="text-danger">City is required, cant be blank!!!</p>
+            <p *ngIf="cityRef.errors?.['min']" class="text-danger">-ve value not allowed .</p>     
+        </div>
+        
+
+         <!-- Email must contains characters followed by an @ sign, followed by more characters, and then a "." --> 
+        <label for="email">Email Id</label><br>
+        <input type="email" id="email" name="email" [(ngModel)]="newEmployee.email" 
+            #emailRef="ngModel" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required><br>
+        
+        <div *ngIf="emailRef.invalid && (emailRef.touched || emailRef.dirty)">
+            <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required, Can't be blank!!!</p>
+            <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Please provide valid email.</p>
+        </div>
+        
+        <!-- type="password" that must contain 8 or more characters that are of at least one number, and one uppercase and lowercase letter -->
+         <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" [(ngModel)]="newEmployee.password" 
+            #passwordRef="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required><br>
+        
+        <div *ngIf="passwordRef.invalid && (passwordRef.touched || passwordRef.dirty)">
+            <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Password is required, Can't be blank!!!</p>
+            <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Please provide valid password</p>
+        </div>
+
+        <label for="confirmPassword">Confirm Password</label><br>
+        <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="newEmployee.confirmPassword" 
+            #confirmPasswordRef="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required><br><br>
+        
+        <div *ngIf="!passwordMatch() && (confirmPasswordRef.touched || confirmPasswordRef.dirty)">
+            <p class="text-danger">Password do not match</p>
+
+        </div>
+
+
+        <input type="submit" (click)="addEmployee()" class="btn btn-success" value="Register" [disabled]="!userForm.valid">
+    </form>
+</div>

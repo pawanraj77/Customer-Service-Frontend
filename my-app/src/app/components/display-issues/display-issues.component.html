@@ -1,0 +1,30 @@
+<div>
+    <h3>Display All Issues </h3>
+    <div *ngIf="message" class="alert alert-success">
+        <p> {{message}}</p>
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        <p> {{errorMessage}}</p>
+    </div>
+
+
+    <h3 *ngIf="issues.length <1"> No issue Found.</h3>
+    <table *ngIf="issues.length>0" class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Issue Type</th>
+                <th>issue Description</th>
+                <!-- <th>Raise Issue</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let issue of issues">
+                <td>{{issue.issueId}}</td>
+                <td>{{issue.issueType}}</td>
+                <td>{{issue.description}}</td>
+                <!-- <td><button (click)="raiseIssue(issue.issueId)" class="btn btn-primary" >Raise</button></td> -->
+            </tr>
+        </tbody>
+    </table>
+</div>
