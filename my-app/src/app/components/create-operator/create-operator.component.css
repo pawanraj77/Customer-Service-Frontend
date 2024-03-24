@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+form{
+    font-family: "Lato", sans-serif;
+}
+#formBox{
+    width: 480px;
+    height: 400px;
+    margin: 0 auto;
+    border: 1px solid black;
+    overflow: auto;
+    padding: 20px;
+    position: relative;
+   
+    padding: 20px 40px;
+    background:linear-gradient(to top left,#ffffffff,#ffffff33);
+    border-radius: 8px;
+    z-index: 2;
+}
+#formBox p{
+    margin: 11px 0;
+}
+#formBox p label{
+    display: block;
+    font-weight: bold;
+}
+#formBox p input{
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    margin: 4px;
+    
+}
+#formBox input[type="submit"]{
+    cursor: pointer;
+    background-color: rgb(118, 118, 209);
+    border: none;
+    color: white;
+    width: 100%;
+    height: 40px;
+    
+}
+.signup-footer p{
+    text-align: center;
+}
+
