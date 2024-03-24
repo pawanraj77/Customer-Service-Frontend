@@ -1,38 +1,16 @@
-<div *ngIf = "isUserLoggedIn">
-  <nav>
-    <ul>
-      <li>
-        <img *ngIf="imageUrl" [src]="imageUrl" alt="image name" height="70px" width="90px">
-      </li>
-      <li>
+<div class="dropdown">
+  <button class="dropbtn">Employee</button>
+  <div class="dropdown-content">
         <a routerLink='home' routerLinkActive = "active">Home</a>
-      </li>
-      <li>
         <a routerLink='add-employee' routerLinkActive = "active">Register</a>
-      </li>
-      <li>
         <a routerLink='login' routerLinkActive = "active">Login</a>
-      </li>
-      <li>
         <a routerLink='employee' routerLinkActive = "active">Display Employees</a>
-      </li>
-      <li>
         <a routerLink='display-issues' routerLinkActive = "active">Display Issue</a>
-      </li>
-      <li>
         <a routerLink='raise-issue' routerLinkActive = "active">Raise Issue</a>
-      </li>
-      <li>
         <a routerLink='view-issues' routerLinkActive = "active">View Issues</a>
-      </li>
-      <li>
         <a routerLink='update-employee/:cdsId' routerLinkActive = "active">Update Employee</a>
-      </li>
-      <li>
         <a routerLink='change-password' routerLinkActive = "active">Change Password</a>
-      </li>
-    </ul>
-  </nav>
+  </div>
 </div>
 <div>
   <router-outlet></router-outlet>
