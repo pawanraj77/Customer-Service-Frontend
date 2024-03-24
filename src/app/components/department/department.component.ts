@@ -4,6 +4,7 @@ import { OperatorService } from '../../services/operator.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { DepartmentOp } from '../../model/department-op';
 
 @Component({
   selector: 'app-department',
@@ -13,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrl: './department.component.css'
 })
 export class DepartmentComponent {
-  departments:Department[]=[];
+  departments:DepartmentOp[]=[];
   message?:string="";
   errorMessage?:string="";
   constructor(private operatorService:OperatorService,private router:Router)
