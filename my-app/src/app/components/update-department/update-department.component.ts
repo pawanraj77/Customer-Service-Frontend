@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrl: './update-department.component.css'
 })
 export class UpdateAccountComponent implements OnInit{
-  id ?: string | null ="";
+  id?: string | null ="";
 
   department:Department = new Department();
   message:string="";

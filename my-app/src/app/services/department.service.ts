@@ -25,11 +25,13 @@ export class DepartmentService {
     return this.httpClient.post('http://localhost:8090/add/department',newDepartment);
   }
 
+  //update the department
   updateDepartment(newDepartment:Department):Observable<any>{
     return this.httpClient.put('http://localhost:8090/department',newDepartment);
   }
 
-  getDepartmentById(depId?:string |null):Observable<any>{
+  //get department by id 
+  getDepartmentById(depId?:string | null) : Observable<any>{
     return this.httpClient.get('http://localhost:8090/department/'+depId);
   }
 }

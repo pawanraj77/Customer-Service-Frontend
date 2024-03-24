@@ -19,7 +19,7 @@ export class DisplayDepartmentComponent {
       {
         next:(data)=>{
           console.log(data);
-          this.deapartment = data;
+          this.deapartment=data;
         },
                 
         error:(err)=>{console.log(err);},

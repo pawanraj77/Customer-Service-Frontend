@@ -14,9 +14,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class SearchDepartmentComponent implements OnInit{
   
-  query : string="";
+query : string="";
  
-  // department:Department = new Department();
 department:Department[] = [];
 
   

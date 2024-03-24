@@ -28,6 +28,6 @@ export class SortDepartmentComponent {
       .subscribe(data => {
         this.department = data;
       });
-  }
+    }
 
 }

@@ -13,6 +13,6 @@ export const routes: Routes = [
     {path:'update-department/:id',component:UpdateAccountComponent},
     {path:'search-department',component:SearchDepartmentComponent},
     {path:'sort-department',component:SortDepartmentComponent},
-    {path:'home',component:HomeComponent}
+    {path:'home', component:HomeComponent}
     
 ];

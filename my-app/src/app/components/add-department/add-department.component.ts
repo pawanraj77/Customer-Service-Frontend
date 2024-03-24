@@ -31,7 +31,6 @@ constructor(private departmentService:DepartmentService){}
           this.errorMessage="";
         },
         error:(err)=>{
-          
           console.log(err);
 
           if(err.status == "0")

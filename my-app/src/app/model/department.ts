@@ -1,6 +1,4 @@
 export class Department {
-    constructor(public deptId?: number,
-        public deptName?: string){
-
+    constructor(public deptId?: number,public deptName?: string){
     }
 }
