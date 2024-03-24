@@ -1,0 +1,26 @@
+<p>get-issues works!</p>
+<h3> Display All Issues.</h3>
+<div *ngIf="message">
+    <p>{{message}}</p>
+</div>
+<div *ngIf="errorMessage">
+    <p>{{errorMessage}}</p>
+</div>
+<h3 *ngIf="issues.length<1">No issues to display</h3>
+<table *ngIf="issues.length>0" id="issues">
+    <thead>
+        <th>Issue Id</th>
+        <th>Issue</th>
+        <th>IssueDescription</th>
+        <th>Action</th>
+    </thead>
+        <tbody>
+            <tr *ngFor="let issue of issues">
+                <td>{{issue.id}}</td>
+                <td>{{issue.issue}}</td>
+                <td>{{issue.issueDescription}}</td>
+                <td><button (click)="assignIssue(issue.id)" class="btn btn-primary" >Assign</button></td>
+
+            </tr>
+        </tbody>
+</table>
