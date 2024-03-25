@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -9,11 +9,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  cardsData = [
-    { image: 'assets/images/client3.jpg', text: "Prompt and Reliable customer service that truly puts the customer first. A pleasure to work with!" },
-    { image: 'assets/images/client2.jpg', text: "The online customer service team exceeded my expectations with their quick responses and helpful guidance. Highly recommended!" },
-    { image: 'assets/images/client.png', text: "I have never encountered such exceptional support before. The team's dedication to solving my issue promptly was truly impressive. Thank you!" }
-  ];
-
-  imageUrl: string = 'assets/images/image.png';
+  constructor(public router: Router) {}
+  getAllOperators(){
+    this.router.navigateByUrl('display');
+  }
+  updateOperator(){
+    this.router.navigateByUrl('updateOperator/'+JSON.parse(localStorage.getItem('user')||'').operatorId);
+  }
+  operatorLogout(){
+    if(confirm("Are you sure u want to logout"))
+    {
+      localStorage.clear();
+    }
+  }
+  
 }
