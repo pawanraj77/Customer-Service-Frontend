@@ -1,5 +1,5 @@
 <div class="dropdown">
-  <button class="dropbtn">Solutions</button>
+  <button class="dropbtn">Employee</button>
   <div class="dropdown-content">
         <a routerLink='home' routerLinkActive = "active">Home</a>
         <a routerLink='add-employee' routerLinkActive = "active">Register</a>
@@ -12,6 +12,14 @@
         <a routerLink='change-password' routerLinkActive = "active">Change Password</a>
   </div>
 </div>
+<div class="dropdown">
+  <button class="dropbtn">Solutions</button>
+  <div class="dropdown-content">
+    <a routerLink="display-solution" routerLinkActive="active">Display Solution</a>
+    <a routerLink="search" routerLinkActive="active">Search Solution</a>
+  </div>
+</div>
 <div>
   <router-outlet></router-outlet>
 </div>
+

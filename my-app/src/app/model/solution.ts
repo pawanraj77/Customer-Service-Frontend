@@ -1,3 +1,5 @@
+import { Issue } from "./issue";
+
 export class Solution {
     constructor(
         public solutionId?: number, 

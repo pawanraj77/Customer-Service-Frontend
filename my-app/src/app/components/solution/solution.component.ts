@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [FormsModule,CommonModule],
   templateUrl: './solution.component.html',
-  styleUrl: './solution.component.css'
+  // styleUrl: './solution.component.css'
 })
 export class SolutionComponent {
   solutions:Solution[] = [];

@@ -1,3 +1,7 @@
+import { Employee } from "./employee";
+import { Operator } from "./operator";
+import { Solution } from "./solution";
+
 export class Issue {
   
     constructor(public issueId?: number,
