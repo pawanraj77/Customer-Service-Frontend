@@ -1,16 +1,34 @@
 <div class="dropdown">
-        <button class="dropbtn">Departments</button>
-        <div class="dropdown-content">
-          <a routerLink="home" routerLinkActive="active">Home</a>
-          <a routerLink="login" routerLinkActive="active">Login</a> 
-          <a routerLink="register" routerLinkActive="active">Register</a>
-          <a routerLink="display" routerLinkActive="active">DispalyOperators</a>
-          <a routerLink="updateOperator/" routerLinkActive="active">UpdateDetails</a>
-          <a routerLink="getIssues" routerLinkActive="active">DisplayIssues</a>
-          <a routerLink="issueBucket" routerLinkActive="active">IssueBucket</a>
-          <a routerLink="departments" routerLinkActive="active">Departments</a>
-        </div>
+  <button class="dropbtn">Employee</button>
+  <div class="dropdown-content">
+        <a routerLink='home' routerLinkActive = "active">Home</a>
+        <a routerLink='add-employee' routerLinkActive = "active">Register</a>
+        <a routerLink='login' routerLinkActive = "active">Login</a>
+        <a routerLink='employee' routerLinkActive = "active">Display Employees</a>
+        <a routerLink='display-issues' routerLinkActive = "active">Display Issue</a>
+        <a routerLink='raise-issue' routerLinkActive = "active">Raise Issue</a>
+        <a routerLink='view-issues' routerLinkActive = "active">View Issues</a>
+        <a routerLink='update-employee/:cdsId' routerLinkActive = "active">Update Employee</a>
+        <a routerLink='change-password' routerLinkActive = "active">Change Password</a>
   </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Solutions</button>
+  <div class="dropdown-content">
+    <a routerLink="display-solution" routerLinkActive="active">Display Solution</a>
+    <a routerLink="search" routerLinkActive="active">Search Solution</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">Departments</button>
+  <div class="dropdown-content">
+    <a routerLink="department" routerLinkActive="active">Department</a>
+    <a routerLink="addDepartment" routerLinkActive="active">Add</a>
+    <a routerLink="search-department" routerLinkActive="active">Search</a>
+    <a routerLink="sort-department" routerLinkActive="active">sort</a>
+    <a routerLink="home" routerLinkActive="active">Home</a>
+  </div>
+</div>
 <div>
   <router-outlet></router-outlet>
 </div>

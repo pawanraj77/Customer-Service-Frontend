@@ -1,40 +1,64 @@
 import { Component } from '@angular/core';
-import { Operator } from '../../model/operator';
 import { Login } from '../../model/login';
-import { OperatorService } from '../../services/operator.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Route, Router } from '@angular/router';
+import { EmployeeService } from '../../services/employee.service';
+import { Router } from '@angular/router';
+import { Employee } from '../../model/employee';
+ 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule,FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
 export class LoginComponent {
-  message: string="";
-  errorMessage:string=""
-  operator:Operator=new Operator();
-  login:Login=new Login();
-  constructor(private operatorService:OperatorService,private router:Router) {}
-  loginOperator()
-  {
-      console.log(this.login);
-      this.operatorService.loginOperator(this.login).subscribe({
-        next:(data)=>{
+
+  message: string = "";
+  errorMessage: string = "";
+  employee:Employee = new Employee();
+  login:Login = new Login();
+
+  constructor(private employeeService:EmployeeService, public router:Router) {}
+
+  userLogin() {
+    console.log(this.login);
+    this.employeeService.loginEmployee(this.login)
+    .subscribe(
+      {
+        next: (data) => {
           console.log(data);
-          localStorage.setItem('user',JSON.stringify(data));
-          alert("employee logged in successFully");
-          this.router.navigateByUrl('home')
-          this.message = "Logged In Successfully";
-          this.errorMessage="";
-        },error:(err)=>{
-          console.log(err.error);
-          this.errorMessage=err.error;
+          localStorage.setItem('user', JSON.stringify(data));
+          alert("Employee Logged In Successfully");
+          this.router.navigateByUrl("home");
+          this.message = "Employee login successful";
+          this.errorMessage = "";
+        },
+        error:(err) => {
+          console.log(err);
+          this.errorMessage = err.error;
           this.message = "";
         }
-      })
+      }
+    ); 
   }
+
+
+  userRegister() {
+    this.router.navigateByUrl("add-employee");
+    console.log("Register the user!!!");
+  }
+
+  userLogout() {
+    console.log("current user logged out");
+    localStorage.clear();
+  }
+
+
+
+
+
+
 }
