@@ -18,6 +18,13 @@ import { AddDepartmentComponent } from './components/add-department/add-departme
 import { SearchDepartmentComponent } from './components/search-department/search-department.component';
 import { SortDepartmentComponent } from './components/sort-department/sort-department.component';
 import { UpdateAccountComponent } from './components/update-department/update-department.component';
+import { CreateOperatorComponent } from './components/create-operator/create-operator.component';
+import { DispalyOperatorsComponent } from './components/dispaly-operators/dispaly-operators.component';
+import { UpdateOperatorComponent } from './components/update-operator/update-operator.component';
+import { GetIssuesComponent } from './components/get-issues/get-issues.component';
+import { IssueBucketComponent } from './components/issue-bucket/issue-bucket.component';
+import { DepartmentComponent } from './components/department/department.component';
+import { DisplayDepartmetOparatorsComponent } from './components/display-departmet-oparators/display-departmet-oparators.component';
 
 export const routes: Routes = [
 
@@ -41,6 +48,14 @@ export const routes: Routes = [
     {path:'search-department',component:SearchDepartmentComponent},
     {path:'sort-department',component:SortDepartmentComponent},
     {path:'home', component:HomeComponent},
+
+    {path:'register',component:CreateOperatorComponent},
+    {path:'display',component:DispalyOperatorsComponent},
+    {path:'updateOperator/:id',component:UpdateOperatorComponent},
+    {path:'getIssues',component:GetIssuesComponent},
+    {path:'issueBucket',component:IssueBucketComponent},
+    {path:'departments',component:DepartmentComponent},
+    {path:'operators/:id',component:DisplayDepartmetOparatorsComponent},
     {path:'', redirectTo: 'home', pathMatch: 'full'}
     
 ];

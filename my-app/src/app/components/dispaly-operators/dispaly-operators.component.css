@@ -1,0 +1,18 @@
+#operators{
+    font-family: 'Times New Roman', Times, serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+#operators td, #operators th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#operators tr:nth-child(even){background-color:#f2f2f2;}
+#operators tr:hover {background-color:#ddd;}
+#operators th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: skyblue;
+    color: white;
+}
