@@ -7,12 +7,24 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, CommonModule, RouterLink, RouterLinkActive, FormsModule],
+  imports: [RouterOutlet, FormsModule, CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'my-app';
-  isUserLoggedIn:boolean = true;
-  imageUrl:string = "./assets/logo1.jpg"; 
+  isAdmin = true;
+
+  constructor() {
+    let user = { name: 'Ford', email: 'ford@gmail.com', role: 'admin' }
+    localStorage.setItem("user", JSON.stringify(user));
+  }
+  checkIsAdmin() {
+    let userStr = localStorage.getItem("user");
+    let useObj = JSON.parse(userStr || '');
+    if (useObj.role === 'admin')
+      return true;
+    else
+      return false;
+  }
+
 }

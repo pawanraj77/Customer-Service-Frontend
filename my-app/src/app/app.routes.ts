@@ -13,6 +13,11 @@ import { DisplaySolutionComponent } from './components/display-solution/display-
 import { PostSolutionComponent } from './components/post-solution/post-solution.component';
 import { UpdateSolutionComponent } from './components/update-solution/update-solution.component';
 import { SearchComponent } from './components/search/search.component';
+import { DisplayDepartmentComponent } from './components/display-department/display-department.component';
+import { AddDepartmentComponent } from './components/add-department/add-department.component';
+import { SearchDepartmentComponent } from './components/search-department/search-department.component';
+import { SortDepartmentComponent } from './components/sort-department/sort-department.component';
+import { UpdateAccountComponent } from './components/update-department/update-department.component';
 
 export const routes: Routes = [
 
@@ -30,7 +35,12 @@ export const routes: Routes = [
     {path:'post-solution/:issueId',component:PostSolutionComponent},
     {path:'update-solution',component:UpdateSolutionComponent},
     {path:'search',component:SearchComponent},
+    { path:'department', component: DisplayDepartmentComponent},
+    { path:  'addDepartment',component:AddDepartmentComponent},
+    {path:'update-department/:id',component:UpdateAccountComponent},
+    {path:'search-department',component:SearchDepartmentComponent},
+    {path:'sort-department',component:SortDepartmentComponent},
+    {path:'home', component:HomeComponent},
     {path:'', redirectTo: 'home', pathMatch: 'full'}
-   
-   
+    
 ];

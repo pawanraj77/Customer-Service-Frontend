@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="mt-3">
+        <h3>Sort Department</h3>
+    </div>
+    <div class="row">
+        <div class="col-6">
+            <table *ngIf="department.length > 0" class="table table-striped">
+                <thead>
+                    <tr>
+                       
+                        <th>Name</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let d of department | sortDepartment : query">
+                        
+                        <td>{{d.deptName}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div *ngIf="department.length < 1" class="alert alert-info col-6">
+        No department found!
+    </div>
+</div>

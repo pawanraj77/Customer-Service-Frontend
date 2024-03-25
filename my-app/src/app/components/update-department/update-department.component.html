@@ -1,0 +1,26 @@
+<div class="container mt-4">
+
+    <h3>Update Department</h3>
+
+    <div *ngIf="message" class="alert alert-success col-6">
+        <p>{{message}}</p>
+    </div>
+
+    <div *ngIf="errorMessage" class="alert alert-danger col-6">
+        <p>{{errorMessage}}</p>
+    </div>
+
+    <form class="mt-3">
+
+        <div class="mb-3">
+            <label for="name" class="form-label">Name</label>
+            <div class="col-6"> 
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="department.deptName">
+            </div>
+        </div>
+
+        <button (click)="updateDepartment()" class="btn btn-success">Update department</button>
+      
+    </form>
+
+</div>
