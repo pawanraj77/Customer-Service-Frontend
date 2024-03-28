@@ -1,4 +1,4 @@
-<h3>Issue Bucket Works</h3>
+
 <div *ngIf="message">
     <p>{{message}}</p>
 </div>
@@ -12,15 +12,17 @@
             <th>IssueId</th>
             <th>Issue</th>
             <th>issueDescription</th>
+            <th>PostSolution</th>
             <th>SAction</th>
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let issue of issues">
-            <td>{{issue.id}}</td>
-            <td>{{issue.issue}}</td>
-            <td>{{issue.issueDescription}}</td>
-            <td><button (click)="solvedIssue(issue.id)" class="btn btn-warning">solvedIssue</button></td>
+            <td>{{issue.issueId}}</td>
+            <td>{{issue.issueType}}</td>
+            <td>{{issue.description}}</td>
+            <td><button (click)="postSolution()" class="btn btn-primary">Post-Solution</button></td>
+            <td><button (click)="solvedIssue(issue.issueId)" class="btn btn-warning">CloseIssue</button></td>
         </tr>
     </tbody>
 

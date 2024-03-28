@@ -43,3 +43,10 @@ input[type="submit"]:hover {
 .text-danger {
     color: #e74c3c;
 }
+#form2 button{
+    background-color: rgb(118, 118, 209);
+        width: 100%;
+       
+        
+    }
+

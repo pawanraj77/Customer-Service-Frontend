@@ -21,7 +21,7 @@ export class PostSolutionComponent {
   date?:Date;
   message:string="";
   errorMessage:string="";
-  constructor(private solutionService:SolutionService,private route: ActivatedRoute) {}
+  constructor(private solutionService:SolutionService,private route: ActivatedRoute,private router:Router) {}
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.issueId = +params['issueId'] || 0;
@@ -33,6 +33,7 @@ export class PostSolutionComponent {
         console.log(data);
         this.message="Solution Added Successfully.";
         this.errorMessage="";
+        setTimeout(()=>{this.router.navigate(['issueBucket'])} ,2000);
       },
       error: (err) => {
         console.log(err);

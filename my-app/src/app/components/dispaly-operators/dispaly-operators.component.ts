@@ -60,8 +60,7 @@ export class DispalyOperatorsComponent {
     this.operatorService.getRemainingIssues(id).subscribe({
       next:(data)=>{
         this.issuesRemaining=data;
-        alert("The remaining issues for operator"+id+' '+data);
-        this.message="Sucess in fetching data";
+        this.message="Sucess in fetching Remaining Issues";
       },error:(err)=>{
         this.errorMessage=err.error;
         this.message="";

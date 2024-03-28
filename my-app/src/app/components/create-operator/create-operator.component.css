@@ -14,7 +14,7 @@ form{
     overflow: auto;
     padding: 20px;
     position: relative;
-   
+    top: 40px;
     padding: 20px 40px;
     background:linear-gradient(to top left,#ffffffff,#ffffff33);
     border-radius: 8px;
@@ -47,5 +47,9 @@ form{
 }
 .signup-footer p{
     text-align: center;
+}
+#outerBox h3{
+    text-align: center;
+    
 }
 

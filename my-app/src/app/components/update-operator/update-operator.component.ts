@@ -54,6 +54,4 @@ ngOnInit():void
       )
       this.router.navigateByUrl('display');
     }
-  
-
 }

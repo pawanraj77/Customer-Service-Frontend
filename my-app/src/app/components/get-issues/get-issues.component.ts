@@ -3,6 +3,7 @@ import { Issue } from '../../model/issue';
 import { OperatorService } from '../../services/operator.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-get-issues',
@@ -15,7 +16,7 @@ export class GetIssuesComponent {
   issues:Issue[]=[];
   message?:string="";
   errorMessage?:string="";
-  constructor(private operatorService:OperatorService)
+  constructor(private operatorService:OperatorService,private router:Router)
   {
     this.operatorService.getAllIssues().subscribe({
       next:(data)=>{
@@ -43,7 +44,8 @@ export class GetIssuesComponent {
   }
   assignedIssue()
   {
-    alert("Are you sure you want to assig issue");
+    confirm("Are you sure you want to assign issue");
     localStorage.clear();
+    this.router.navigateByUrl('display');
   }
 }

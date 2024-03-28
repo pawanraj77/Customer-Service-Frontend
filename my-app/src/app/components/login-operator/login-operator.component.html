@@ -1,0 +1,40 @@
+
+<div *ngIf="message">
+    <p>{{message}}</p>
+</div>
+<div *ngIf="errorMessage">
+    <p>{{errorMessage}}</p>
+</div>
+<body>
+    <div class="outer-box">
+    <div class="login-box">
+        <header class="login-header">
+            <h1>Login</h1>
+        </header>
+            <main class="login-body">
+                <form id="loginForm" #loginForm="ngForm">
+                <p>
+                <label for="email">EmailId</label>
+                <input type="email" name="email" id="email" [(ngModel)]="login.email"  #emailRef="ngModel" pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required /><br>
+                </p>
+                <div *ngIf="emailRef.invalid && (emailRef.touched||emailRef.dirty)">
+                        <p *ngIf="emailRef.errors?.['required']" class="text-danger">Email is required.</p>
+                        <p *ngIf="emailRef.errors?.['pattern']" class="text-danger">Please enter a valid email address.</p>
+                    </div>
+                    <p>
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" [(ngModel)]="login.password" #passwordRef="ngModel" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required><br>
+                    </p>
+                    <div *ngIf="passwordRef.invalid && (passwordRef.touched||passwordRef.dirty)">
+                        <p *ngIf="passwordRef.errors?.['required']" class="text-danger">Field can not be empty.</p>
+                        <p *ngIf="passwordRef.errors?.['pattern']" class="text-danger">Invalid Password</p>
+                    </div>
+                    <button (click)="loginOperator()" class="btn btn-primary">Login</button>
+                </form>
+            </main>
+        <footer class="signup-footer">
+            <p>Dont have an Account ?<a href="register">Register</a></p>
+        </footer>
+    </div>
+    </div>
+</body>

@@ -41,4 +41,9 @@ export class EmployeeService {
   viewIssuesByEmployee(cdsId?:string|null) : Observable<any> {
     return this.httpClient.get('http://localhost:8090/employee/issues/' + cdsId);
   }
+
+  // getIssueSolutionByCdsId(cdsId?: string|null, IssueId? : number){
+  //   return this.httpClient.get('http://localhost:8090/issue/solution/' + cdsId + '/' + IssueId, {});
+  // }
+
 }

@@ -43,3 +43,12 @@ input[type="submit"]:hover {
 .text-danger {
     color: #e74c3c;
 }
+#form1 input[type="submit"]{
+    cursor: pointer;
+    background-color: rgb(118, 118, 209);
+    border: none;
+    color: white;
+    width: 100%;
+    height: 40px;
+    
+}

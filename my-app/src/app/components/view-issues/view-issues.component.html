@@ -12,11 +12,13 @@
         <thead>
             <tr>
                 <th>Issue Description</th>
+                <th>Solution</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let issue of issues">
+            <tr *ngFor="let issue of issues" >
                 <td>{{issue.description}}</td>
+                <td>{{issue.solution?.description}}</td>
             </tr>
         </tbody>
     </table>

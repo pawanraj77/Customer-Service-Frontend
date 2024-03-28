@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { EmployeeService } from '../../services/employee.service';
 import { Router } from '@angular/router';
 import { Employee } from '../../model/employee';
+import { OperatorService } from '../../services/operator.service';
  
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent {
   employee:Employee = new Employee();
   login:Login = new Login();
 
-  constructor(private employeeService:EmployeeService, public router:Router) {}
+  constructor(private employeeService:EmployeeService, public router:Router, private operatorService:OperatorService) {}
 
   userLogin() {
     console.log(this.login);
@@ -31,7 +32,7 @@ export class LoginComponent {
         next: (data) => {
           console.log(data);
           localStorage.setItem('user', JSON.stringify(data));
-          alert("Employee Logged In Successfully");
+          // alert("Employee Logged In Successfully");
           this.router.navigateByUrl("home");
           this.message = "Employee login successful";
           this.errorMessage = "";

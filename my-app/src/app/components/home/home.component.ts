@@ -16,4 +16,5 @@ export class HomeComponent {
   ];
 
   imageUrl: string = 'assets/images/image.png';
+  
 }

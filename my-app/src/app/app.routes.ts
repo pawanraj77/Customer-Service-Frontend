@@ -25,6 +25,7 @@ import { GetIssuesComponent } from './components/get-issues/get-issues.component
 import { IssueBucketComponent } from './components/issue-bucket/issue-bucket.component';
 import { DepartmentComponent } from './components/department/department.component';
 import { DisplayDepartmetOparatorsComponent } from './components/display-departmet-oparators/display-departmet-oparators.component';
+import { LoginOperatorComponent } from './components/login-operator/login-operator.component';
 
 export const routes: Routes = [
 
@@ -53,6 +54,7 @@ export const routes: Routes = [
     {path:'display',component:DispalyOperatorsComponent},
     {path:'updateOperator/:id',component:UpdateOperatorComponent},
     {path:'getIssues',component:GetIssuesComponent},
+    {path:'login-operator',component:LoginOperatorComponent},
     {path:'issueBucket',component:IssueBucketComponent},
     {path:'departments',component:DepartmentComponent},
     {path:'operators/:id',component:DisplayDepartmetOparatorsComponent},

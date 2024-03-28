@@ -1,5 +1,4 @@
-<p>update-employee works</p>
-<!-- {{employee | json}} -->
+
 
 <div>
     <h3>Update Employee</h3>
@@ -9,26 +8,34 @@
     <div *ngIf="errorMessage" class="alert alert-danger">
         <p>{{errorMessage}}</p>
     </div>
-    <form *ngIf="employee">
+    <div id="formBox">
+    <form id="form" *ngIf="employee">
+        <p>
         <label for="name">First Name</label><br>
         <input type="text" id="firstName" name="firstName" [(ngModel)]="employee.firstName"><br>
-        
+        </p>
+        <p>
         <label for="name">Last Name</label><br>
         <input type="text" id="lastName" name="lastName" [(ngModel)]="employee.lastName"><br>
-
+        </p>
+        <p>
         <label for="phoneNo">Phone No.</label><br>
         <input type="number" id="phoneNo" name="phoneNo" [(ngModel)]="employee.phoneNo"><br>
-
+        </p>
+        <p>
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email" [(ngModel)]="employee.email" disabled readonly><br>
-
+        </p>
+        <p>
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password" [(ngModel)]="employee.password" disabled="readonly"><br>
-
+        </p>
+        <p>
         <label for="city">City</label><br>
         <input type="text" id="city" name="city" [(ngModel)]="employee.city"><br><br>
-
+         </p>
         <button (click)="updateEmployee()" class="btn btn-success">Update</button>
 
     </form>
+    </div>
 </div>

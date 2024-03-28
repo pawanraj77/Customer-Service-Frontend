@@ -3,6 +3,7 @@ import { IssueBucket } from '../../model/issue-bucket';
 import { OperatorService } from '../../services/operator.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-issue-bucket',
@@ -15,7 +16,7 @@ export class IssueBucketComponent {
     issues:IssueBucket[]=[];
     message?:string="";
     errorMessage?:string="";
-    constructor(private operatorService:OperatorService)
+    constructor(private operatorService:OperatorService,private router:Router)
     {
         this.operatorService.getIssuesAssignToOperator(JSON.parse(localStorage.getItem('user')||'').operatorId).subscribe({
           next:(data)=>{
@@ -33,12 +34,12 @@ export class IssueBucketComponent {
     solvedIssue(issueId?:number)
     {
         console.log(issueId);
-        alert("Are you sure to close the isssue")
+        confirm("Are you sure to close the isssue")
         this.operatorService.solvedIssue(JSON.parse(localStorage.getItem("user")||'').operatorId,issueId).subscribe({
           next:(data)=>{
             console.log(data);
             console.log("closed Issue");
-            this.issues=this.issues.filter((a)=>a.id!=issueId)
+            this.issues=this.issues.filter((a)=>a.issueId!=issueId)
             this.message="Solved Issue";
             this.errorMessage="";
           },error:(err)=>{
@@ -46,5 +47,9 @@ export class IssueBucketComponent {
             this.message="";
           }
         })
+    }
+    postSolution()
+    {
+        this.router.navigateByUrl('display-solution');
     }
 }

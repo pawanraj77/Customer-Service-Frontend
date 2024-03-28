@@ -3,6 +3,7 @@ import { Operator } from '../../model/operator';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { OperatorService } from '../../services/operator.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-operator',
@@ -13,7 +14,7 @@ import { OperatorService } from '../../services/operator.service';
 })
 export class CreateOperatorComponent {
   newOperator:Operator=new Operator();
-  constructor(private operatorService:OperatorService){}
+  constructor(private operatorService:OperatorService,private router:Router){}
   sucessMsg:string="";
   failMsg:string="";
   addOperator()
@@ -23,9 +24,9 @@ export class CreateOperatorComponent {
       {
         next:(data)=>{
           console.log(data);
-          alert("Success fully added operator")
           this.sucessMsg="Successfully added the operator...";
           this.failMsg="";
+          setTimeout(()=>{this.router.navigate(['login-operator'])} ,2000);
         },
         error:(err)=>{
           console.log(err);

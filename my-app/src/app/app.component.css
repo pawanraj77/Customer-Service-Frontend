@@ -1,12 +1,72 @@
+/* CSS for Navbar Styling */
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown button */
 .dropbtn {
-    background-color: #563113; /* Button background color */
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  padding: 14px 16px;
+}
+
+.dropbtn:hover {
+  background-color: #f1f1f1;
+}
+
+/* Dropdown content */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Show the dropdown content on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Active link styling */
+.active {
+  background-color: #886b54;
+  color: white;
+}
+
+/* Clear floats after the dropdown content */
+.dropdown::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+/* .dropbtn {
+    background-color: #563113; 
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
-  
+  } */
+/*   
   .dropdown {
     position: relative;
     display: inline-block;
@@ -32,8 +92,8 @@
   
   .dropdown:hover .dropdown-content {
     display: block;
-  }
+  } */
   
-  .dropdown:hover .dropbtn {
-    background-color: #563113; /* Button background color */
-  }
+  /* .dropdown:hover .dropbtn {
+    background-color: #563113; 
+  } */

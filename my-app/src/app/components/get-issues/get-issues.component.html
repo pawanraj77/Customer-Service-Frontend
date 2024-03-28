@@ -1,4 +1,4 @@
-<p>get-issues works!</p>
+
 <h3> Display All Issues.</h3>
 <div *ngIf="message">
     <p>{{message}}</p>
@@ -6,6 +6,7 @@
 <div *ngIf="errorMessage">
     <p>{{errorMessage}}</p>
 </div>
+<div class="issuBox">
 <h3 *ngIf="issues.length<1">No issues to display</h3>
 <table *ngIf="issues.length>0" id="issues">
     <thead>
@@ -13,7 +14,6 @@
         <th>Issue</th>
         <th>IssueDescription</th>
         <th>Action</th>
-        <th>AsiAction</th>
     </thead>
         <tbody>
             <tr *ngFor="let issue of issues">
@@ -21,7 +21,9 @@
                 <td>{{issue.issueType}}</td>
                 <td>{{issue.description}}</td>
                 <td><button (click)="assignIssue(issue.issueId)" class="btn btn-primary" >Assign</button></td>   
-                <td><button (click)="assignedIssue()" class="btn btn-warning">Assigned</button></td>
+                
             </tr>
         </tbody>
 </table>
+<button (click)="assignedIssue()" id="assignButton"class="btn btn-warning">Assigned</button>
+</div>
